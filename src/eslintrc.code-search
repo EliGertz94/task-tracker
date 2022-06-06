@@ -1,0 +1,9 @@
+# Query: eslintrc
+# ContextLines: 1
+
+1 result - 1 file
+
+README.md:
+  226  
+  227: >VS Code ESLint plugin automatically detects Create React App's configuration file. So you do not need to create `eslintrc.json` at the root directory, except when you want to add your own rules. In that case, you should include CRA's config by adding this line:
+
