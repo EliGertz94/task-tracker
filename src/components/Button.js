@@ -8,7 +8,7 @@ const Button = ({text ,onClick,Boolean}) => {
     return (
         <div>
             <button className='btn'  onClick={onClick}
-                style={{ backgroundColor: Boolean ? 'green' : 'red' }}>
+                style={{ backgroundColor: Boolean ? 'red' : 'green' }}>
                 {text} </button>
 
         </div>

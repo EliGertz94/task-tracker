@@ -1,36 +1,19 @@
-import React from 'react'
-import { useState } from 'react'
-import Button from './Button'
+import React from "react";
+import Button from "./Button";
 
-const Header = () => {
-
-
-        const [bool, setBool] = useState(true)
-
-       
-    
-
-        const onclick = ()=>{
-           // setTask("new task")
-            if (bool) {
-    
-                setBool(false)
-            } else {
-                setBool(true)
-            }
-        }
-
+const Header = ({ show, showState }) => {
+  return (
+    <header className="header">
+      <Button
+        text={!showState?"Add Task":"close"}
+        Boolean={showState}
+        onClick={() => show(!showState)}
         
-    return (
+      /> 
+  
+      <h3 style={{alignitems: 'center'}}>Tasks To Do!</h3>
+    </header>
+  );
+};
 
-        <header className='header'>
-            <Button text='click' Boolean={bool} onClick={onclick}/>
-            <h4>task</h4>
-        </header>
-    )
-}
-
-
-
-
-export default Header
+export default Header;
