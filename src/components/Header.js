@@ -13,7 +13,7 @@ const Header = ({ show, showState }) => {
   
       <h3 style={{alignitems: 'center'}}>Tasks To Do!</h3>
     </header>
-  );
+  ); 
 };
 
 export default Header;
