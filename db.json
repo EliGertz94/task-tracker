@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "text": "react",
+      "day": "2022-06-09",
+      "reminder": true,
+      "id": 2
+    },
+    {
+      "text": "spring",
+      "day": "2022-06-13",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "bootstrap",
+      "day": "2022-06-13",
+      "reminder": true,
+      "id": 4
+    }
+  ]
+}

@@ -7,7 +7,7 @@ export const Task = ({ task, onDelete, onToggle }) => {
       onDoubleClick={() => onToggle(task.id)}
     >
      
-      <div onClick={() => onToggle(task.id)}>
+      <div >
         <h3>{task.text} </h3>
         <p>{task.day}</p>
       </div>
