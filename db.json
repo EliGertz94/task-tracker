@@ -1,22 +1,22 @@
 {
   "tasks": [
     {
-      "text": "react",
-      "day": "2022-06-09",
-      "reminder": true,
-      "id": 2
-    },
-    {
       "text": "spring",
       "day": "2022-06-13",
       "reminder": true,
       "id": 3
     },
     {
-      "text": "bootstrap",
-      "day": "2022-06-13",
+      "text": "react-Udemy",
+      "day": "2022-06-14",
       "reminder": true,
-      "id": 4
+      "id": 5
+    },
+    {
+      "text": "add react chnges to GIt",
+      "day": "2022-06-14",
+      "reminder": true,
+      "id": 6
     }
   ]
 }

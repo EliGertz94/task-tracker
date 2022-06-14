@@ -4,10 +4,25 @@ import Tasks from "./components/Tasks";
 import "./App.css";
 import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
+import DateSelector from "./components/DateSelector";
 
 const App = () => {
   const [showForm, setShowForm] = useState(false);
   const [tasks, setTasksList] = useState([]);
+  const [selectedDay, setSelectedDate] = useState("");
+
+
+  const setYear= async(year)=>{
+    setSelectedDate(year)
+
+    const allTasks = await fetchTasks();
+
+  
+
+
+    setTasksList(allTasks.filter((task) => task.day === year));
+
+  }
 
   useEffect(() => {
     const getTasks = async () => {
@@ -41,25 +56,26 @@ const App = () => {
 
   // Toggle Reminder
   const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id)
-    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
+    const taskToToggle = await fetchTask(id);
+    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
     const res = await fetch(`http://localhost:5000/tasks/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-type': 'application/json',
+        "Content-type": "application/json",
       },
       body: JSON.stringify(updTask),
-    })
+    });
 
-    const data = await res.json()
+    const data = await res.json();
+    console.log(data)
 
     setTasksList(
       tasks.map((task) =>
         task.id === id ? { ...task, reminder: data.reminder } : task
       )
-    )
-  }
+    );
+  };
 
   //add Task
   const addTask = async (task) => {
@@ -68,10 +84,10 @@ const App = () => {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(task),
     });
- 
+
     const data = await res.json();
 
-    setTasksList([...tasks, data]);
+    setTasksList([data,...tasks]);
 
     //const id = Math.floor(Math.random() * 10000) + 1;
     //const newTask = { id, ...task };
@@ -81,6 +97,7 @@ const App = () => {
   return (
     <div className="container">
       <Header show={setShowForm} showState={showForm} />
+      {showForm && <DateSelector selectedYear={selectedDay} setDate= {setYear}/>}
       {showForm && <AddTask addT={addTask} />}
       {tasks.length !== 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
@@ -89,6 +106,6 @@ const App = () => {
       )}
     </div>
   );
-};       
+};
 
 export default App;
