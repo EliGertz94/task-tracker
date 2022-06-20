@@ -1,17 +1,21 @@
 import React from "react";
 import Button from "./Button";
+import Switch from "./Switch";
 
-const Header = ({ show, showState }) => {
+const Header = ({ show, showState, dateUpdate,currentDay ,darkMode,darkModeHandler }) => {
+
+  const buttonFunction=()=>{
+    show(!showState)
+    dateUpdate(currentDay)
+  }
   return (
     <header className="header">
       <Button
-        text={!showState?"Add Task or Search Day":"close"}
+        text={!showState?"Add Task":"close"}
         Boolean={showState}
-        onClick={() => show(!showState)}
-        
+        onClick={() => buttonFunction()}
       /> 
-  
-      <h3 style={{alignitems: 'center'}}>Tasks To Do Today!</h3>
+    <Switch isOn={darkMode} handelToggle={darkModeHandler}/>
     </header>
   ); 
 };

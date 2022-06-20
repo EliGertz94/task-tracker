@@ -8,30 +8,43 @@ import DateSelector from "./components/DateSelector";
 
 const App = () => {
   const [showForm, setShowForm] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const [tasks, setTasksList] = useState([]);
-  const [selectedDay, setSelectedDate] = useState("");
 
+  const setDarkModeHandler = (mode) => {
+    setDarkMode(mode);
+  };
 
-  const setYear= async(year)=>{
-    setSelectedDate(year)
+  const current = new Date();
+
+  const date =
+    current.getFullYear() +
+    "-" +
+    String(current.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(current.getDate()).padStart(2, "0");
+
+  const [selectedDay, setSelectedDate] = useState(date);
+  console.log(tasks);
+
+  const setYear = async (year) => {
+    setSelectedDate(year);
 
     const allTasks = await fetchTasks();
 
-  
-
-
     setTasksList(allTasks.filter((task) => task.day === year));
-
-  }
+  };
 
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks();
-      setTasksList(tasksFromServer);
+      setYear(selectedDay);
+
+      console.log("use effect")
     };
 
     getTasks();
-  }, []);
+  }, [selectedDay]);
 
   const fetchTasks = async () => {
     const res = await fetch("http://localhost:5000/tasks");
@@ -48,10 +61,13 @@ const App = () => {
   };
 
   //delete task
-  const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
-
-    setTasksList(tasks.filter((task) => task.id !== id));
+  const deleteTask = async (id, text) => {
+    if (
+      window.confirm(`Are you sure you want to Delete that Task:  ${text} ?  `)
+    ) {
+      await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
+      setTasksList(tasks.filter((task) => task.id !== id));
+    }
   };
 
   // Toggle Reminder
@@ -68,7 +84,6 @@ const App = () => {
     });
 
     const data = await res.json();
-    console.log(data)
 
     setTasksList(
       tasks.map((task) =>
@@ -87,22 +102,34 @@ const App = () => {
 
     const data = await res.json();
 
-    setTasksList([data,...tasks]);
-
-    //const id = Math.floor(Math.random() * 10000) + 1;
-    //const newTask = { id, ...task };
-    //setTasksList([newTask, ...tasks])
+    setYear(selectedDay);
   };
 
   return (
-    <div className="container">
-      <Header show={setShowForm} showState={showForm} />
-      {showForm && <DateSelector selectedYear={selectedDay} setDate= {setYear}/>}
-      {showForm && <AddTask addT={addTask} />}
+    <div className={darkMode ? `container-darkmode` : `container`}>
+      <Header
+        show={setShowForm}
+        showState={showForm}
+        dateUpdate={setSelectedDate}
+        currentDay={date}
+        darkMode={darkMode}
+        darkModeHandler={setDarkMode}
+      />
+      {!showForm && (
+        <DateSelector selectedYear={selectedDay} setDate={setYear} />
+      )}
+      {showForm && <AddTask addT={addTask} currentDay={selectedDay} />}
+      {tasks.length!==0?<h3> {tasks.filter((task)=>task.reminder===true).length} Task To Go Today! Yes You Can ! :) </h3>:''}
+     
       {tasks.length !== 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+        <Tasks
+          tasks={tasks}
+          onDelete={deleteTask}
+          onToggle={toggleReminder}
+          darkMode={darkMode}
+        />
       ) : (
-        "No Tasks To Show"
+        <h3 className="header form-control-check">No Tasks To Today? :0</h3>
       )}
     </div>
   );

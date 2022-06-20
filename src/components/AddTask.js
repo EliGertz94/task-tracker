@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-const AddTask = ({ addT }) => {
+const AddTask = ({ addT ,currentDay}) => {
   const [text, setText] = useState("");
-  const [day, setDate] = useState("");
+  const [day, setDate] = useState(currentDay);
   const [reminder, setChecked] = useState(false);
 
   const onSubmit = (e) => {
@@ -18,8 +18,10 @@ const AddTask = ({ addT }) => {
     addT({ text, day, reminder });
 
     setText("");
-    setDate("");
+    setDate(currentDay);
     setChecked(false);
+
+    
   };
   return (
     <form className="add-form" onSubmit={onSubmit}>
@@ -37,8 +39,7 @@ const AddTask = ({ addT }) => {
         <label>Date :</label>
         <input
           type="date"
-          
-          value={day}
+                    value={day}
           onChange={(e) => setDate(e.target.value)}
         />
       </div>

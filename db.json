@@ -3,7 +3,7 @@
     {
       "text": "spring",
       "day": "2022-06-13",
-      "reminder": true,
+      "reminder": false,
       "id": 3
     },
     {
@@ -17,6 +17,126 @@
       "day": "2022-06-14",
       "reminder": true,
       "id": 6
+    },
+    {
+      "text": "save all back-end related slides from john brice",
+      "day": "2022-06-14",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "1",
+      "day": "2022-06-16",
+      "reminder": false,
+      "id": 15
+    },
+    {
+      "text": " hgbnm",
+      "day": "2022-06-14",
+      "reminder": false,
+      "id": 20
+    },
+    {
+      "text": ",n,mn",
+      "day": "2022-06-14",
+      "reminder": false,
+      "id": 23
+    },
+    {
+      "text": ",mm,,m",
+      "day": "2022-06-16",
+      "reminder": false,
+      "id": 24
+    },
+    {
+      "text": "new",
+      "day": "2022-06-16",
+      "reminder": true,
+      "id": 25
+    },
+    {
+      "text": "mm,",
+      "day": "2022-06-18",
+      "reminder": false,
+      "id": 26
+    },
+    {
+      "text": ",, ,m,,",
+      "day": "2022-06-18",
+      "reminder": true,
+      "id": 27
+    },
+    {
+      "text": "react udemy ",
+      "day": "2022-06-19",
+      "reminder": false,
+      "id": 28
+    },
+    {
+      "text": "add dark mode ",
+      "day": "2022-06-19",
+      "reminder": false,
+      "id": 29
+    },
+    {
+      "text": "java for spring ",
+      "day": "2022-06-19",
+      "reminder": true,
+      "id": 30
+    },
+    {
+      "text": "add state to dark-mode",
+      "day": "2022-06-19",
+      "reminder": false,
+      "id": 31
+    },
+    {
+      "text": "add DarkMode state (true/false) to Database json ",
+      "day": "2022-06-20",
+      "reminder": true,
+      "id": 32
+    },
+    {
+      "text": "add business Expenses",
+      "day": "2022-06-19",
+      "reminder": true,
+      "id": 33
+    },
+    {
+      "text": "add updates to git",
+      "day": "2022-06-19",
+      "reminder": true,
+      "id": 34
+    },
+    {
+      "text": "order tasks by reminder true first and update at date  filter and doubleclick",
+      "day": "2022-06-20",
+      "reminder": true,
+      "id": 35
+    },
+    {
+      "text": "ljlkdsf",
+      "day": "2022-06-16",
+      "reminder": false,
+      "id": 37
+    },
+    {
+      "text": "fix animation disapirence",
+      "day": "2022-06-20",
+      "reminder": true,
+      "id": 38
+    },
+    {
+      "text": "add project to git ",
+      "day": "2022-06-20",
+      "reminder": true,
+      "id": 39
+    },
+    {
+      "text": "add expenses of the business",
+      "day": "2022-06-20",
+      "reminder": true,
+      "id": 40
     }
   ]
 }
