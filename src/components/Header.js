@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./Button";
-import Switch from "./Switch";
+import SettingsIcon from "./SettingsIcon";
 
-const Header = ({ show, showState, dateUpdate,currentDay ,darkMode,darkModeHandler }) => {
+const Header = ({ show, showState, dateUpdate,currentDay,darkMode  }) => {
 
   const buttonFunction=()=>{
     show(!showState)
@@ -15,7 +15,9 @@ const Header = ({ show, showState, dateUpdate,currentDay ,darkMode,darkModeHandl
         Boolean={showState}
         onClick={() => buttonFunction()}
       /> 
-    <Switch isOn={darkMode} handelToggle={darkModeHandler}/>
+   
+  
+    <SettingsIcon darkMode={darkMode}/>
     </header>
   ); 
 };

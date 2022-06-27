@@ -27,20 +27,8 @@
     {
       "text": "1",
       "day": "2022-06-16",
-      "reminder": false,
+      "reminder": true,
       "id": 15
-    },
-    {
-      "text": " hgbnm",
-      "day": "2022-06-14",
-      "reminder": false,
-      "id": 20
-    },
-    {
-      "text": ",n,mn",
-      "day": "2022-06-14",
-      "reminder": false,
-      "id": 23
     },
     {
       "text": ",mm,,m",
@@ -93,7 +81,7 @@
     {
       "text": "add DarkMode state (true/false) to Database json ",
       "day": "2022-06-20",
-      "reminder": true,
+      "reminder": false,
       "id": 32
     },
     {
@@ -129,7 +117,7 @@
     {
       "text": "add project to git ",
       "day": "2022-06-20",
-      "reminder": true,
+      "reminder": false,
       "id": 39
     },
     {
@@ -137,6 +125,42 @@
       "day": "2022-06-20",
       "reminder": true,
       "id": 40
+    },
+    {
+      "text": "change the value of darkMode insetting from code",
+      "day": "2022-06-21",
+      "reminder": true,
+      "id": 41
+    },
+    {
+      "text": "dfsdfdsf",
+      "day": "2022-06-25",
+      "reminder": true,
+      "id": 42
+    },
+    {
+      "text": "java",
+      "day": "2022-06-26",
+      "reminder": false,
+      "id": 43
+    },
+    {
+      "text": "React",
+      "day": "2022-06-26",
+      "reminder": true,
+      "id": 44
+    },
+    {
+      "text": "stop space membershipe",
+      "day": "2022-06-26",
+      "reminder": true,
+      "id": 45
+    }
+  ],
+  "settings": [
+    {
+      "darkMode": true,
+      "id": 1
     }
   ]
 }

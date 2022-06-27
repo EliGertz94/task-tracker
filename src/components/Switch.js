@@ -4,12 +4,14 @@ const Switch = ({ isOn, handelToggle }) => {
   console.log(isOn);
   const darkModeHandler = () => {
     handelToggle(!isOn);
+    // add to app.js 
+    //change the json darkmode 
   };
   return (
     <div>
       <input
         checked={isOn}
-        onChange={() => darkModeHandler()}
+        onChange={darkModeHandler}
         className="react-switch-checkbox"
         id={`react-switch-new`}
         type="checkbox"
